@@ -3,7 +3,8 @@
     "allow": [
       "Bash(mkdir:*)",
       "Bash(pip install:*)",
-      "Read(/Users/spersad/miniforge3/lib/python3.12/site-packages/**)"
+      "Read(/Users/spersad/miniforge3/lib/python3.12/site-packages/**)",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []

@@ -11,7 +11,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 import networkx as nx
-import walker 
+try:
+    import walker
+    HAS_WALKER = True
+except ImportError:
+    HAS_WALKER = False
+    walker = None 
 import scanpy as sc
 try:
     from ete3 import Tree, TreeStyle, NodeStyle, TextFace

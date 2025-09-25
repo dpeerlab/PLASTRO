@@ -6,8 +6,10 @@ PLASTRO can be installed via pip or conda. We recommend using conda for easier d
 Requirements
 ------------
 
-PLASTRO requires Python 3.8 or higher and the following core dependencies:
+PLASTRO requires Python 3.10 or higher and the following core dependencies:
 
+* pybind11 >= 2.6.0 (required for building graph-walker)
+* graph-walker >= 1.0.6 (essential for random walk functionality)
 * NumPy >= 1.20.0
 * Pandas >= 1.3.0  
 * SciPy >= 1.7.0
@@ -16,20 +18,27 @@ PLASTRO requires Python 3.8 or higher and the following core dependencies:
 * AnnData >= 0.8.0
 * NetworkX >= 2.6.0
 * scikit-learn >= 1.0.0
+* scikit-bio >= 0.5.7
+* ete3 >= 3.1.2
+* seaborn >= 0.11.0
+* tqdm >= 4.60.0
+* icecream >= 2.1.0
 
 Install via Pip
 ---------------
 
-The easiest way to install PLASTRO is via pip:
+PLASTRO requires pybind11 to be installed first for building essential dependencies:
 
 .. code-block:: bash
 
+   pip install pybind11
    pip install plastro
 
 To install with all optional dependencies:
 
 .. code-block:: bash
 
+   pip install pybind11
    pip install plastro[all]
 
 Install via Conda
@@ -48,8 +57,9 @@ For development, clone the repository and install in editable mode:
 
 .. code-block:: bash
 
-   git clone https://github.com/username/plastro.git
-   cd plastro
+   git clone https://github.com/dpeerlab/PLASTRO.git
+   cd PLASTRO
+   pip install pybind11
    pip install -e ".[dev]"
 
 Using Environment Files
@@ -81,11 +91,6 @@ Some features require additional packages:
 
    pip install cassiopeia-lineage
 
-**Archetype Analysis:**
-
-.. code-block:: bash
-
-   pip install py-pcha
 
 **Development Tools:**
 
@@ -125,13 +130,14 @@ Troubleshooting
    
       conda install -c etetoolkit ete3
 
-2. **Walker Package Not Found**
+2. **Graph-Walker Build Issues**
    
-   Install the walker package for random walks:
+   If graph-walker fails to build, ensure pybind11 is installed first:
    
    .. code-block:: bash
    
-      pip install walker
+      pip install pybind11
+      pip install graph-walker
 
 3. **Memory Issues with Large Datasets**
    

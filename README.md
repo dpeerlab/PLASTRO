@@ -20,22 +20,33 @@
 
 ### Quick Install
 
+PLASTRO requires `pybind11` to be installed first for building essential dependencies:
+
 ```bash
+pip install pybind11
 pip install plastro
 ```
 
-### Conda Install (coming soon)
+### From TestPyPI (Latest Development Version)
 
 ```bash
-conda install -c conda-forge plastro
+pip install pybind11
+pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ plastro
 ```
 
 ### Development Install
 
 ```bash
 git clone https://github.com/dpeerlab/PLASTRO.git
-cd plastro
+cd PLASTRO
+pip install pybind11
 pip install -e .
+```
+
+### Conda Install (coming soon)
+
+```bash
+conda install -c conda-forge plastro
 ```
 
 ## Quick Start
@@ -206,22 +217,26 @@ print(f"Plastic mean Gini score: {plastic_scores['Gini_Index'].mean():.3f}")
 ## Dependencies
 
 **Core requirements:**
-- Python ≥ 3.8
+- Python ≥ 3.10
+- pybind11 ≥ 2.6.0 (required for building graph-walker)
+- graph-walker ≥ 1.0.6 (essential for random walk functionality)
 - NumPy ≥ 1.20.0
 - Pandas ≥ 1.3.0
 - SciPy ≥ 1.7.0
 - scikit-learn ≥ 1.0.0
+- scikit-bio ≥ 0.5.7 (for robust neighbor-joining trees)
 - NetworkX ≥ 2.6.0
 - matplotlib ≥ 3.4.0
 - scanpy ≥ 1.8.0
+- anndata ≥ 0.8.0
+- ete3 ≥ 3.1.2 (for phylogenetic tree manipulation)
 - tqdm ≥ 4.60.0
+- seaborn ≥ 0.11.0
+- icecream ≥ 2.1.0
 
 **Optional dependencies:**
-- `cassiopeia-lineage` (for lineage tracing simulation)
-- `ete3` (for phylogenetic tree manipulation)
-- `scikit-bio` (for robust neighbor-joining trees)
-- `numba` (for additional performance optimization)
-- `faiss-cpu` (for approximate nearest neighbors on large datasets)
+- `cassiopeia-lineage` (for advanced lineage tracing simulation)
+- `igraph` (for Leiden clustering in phenotype simulation)
 
 ## Data Requirements
 

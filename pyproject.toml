@@ -1,13 +1,13 @@
 [build-system]
-requires = ["setuptools>=45", "wheel"]
+requires = ["setuptools>=45", "wheel", "pybind11>=2.6.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "plastro"
-version = "0.1.0"
+version = "0.1.2"
 description = "A Python package for simulating cellular plasticity in single-cell data"
 readme = "README.md"
-license = {file = "LICENSE"}
+license = "MIT"
 authors = [
     {name = "Sitara Persad", email = "sitara.persad@example.com"},
 ]
@@ -18,7 +18,6 @@ classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering :: Bio-Informatics",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
@@ -36,8 +35,10 @@ keywords = [
     "cellular-plasticity",
     "CRISPR",
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 dependencies = [
+    "pybind11>=2.6.0",  # Must be first - required for building graph-walker
+    "graph-walker>=1.0.6",  # Essential for random walk functionality
     "numpy>=1.20.0",
     "pandas>=1.3.0",
     "scipy>=1.7.0",
@@ -49,8 +50,8 @@ dependencies = [
     "ete3>=3.1.2",
     "scikit-learn>=1.0.0",
     "tqdm>=4.60.0",
-    # "graph-walker>=1.0.6",  # Temporarily commented for basic install
     "icecream>=2.1.0",
+    "scikit-bio>=0.5.7",  # Required for neighbor joining algorithm
 ]
 # dynamic = ["version"]  # Commented out since we're using static version
 
@@ -77,23 +78,22 @@ notebooks = [
 ]
 lineage = [
     "cassiopeia-lineage>=2.0.0",
+    "igraph>=0.10.0",  # Required for Leiden clustering
 ]
-archetypes = [
-    "py-pcha>=0.1.0",
+clustering = [
+    "igraph>=0.10.0",  # Optional for Leiden clustering in phenotype simulation
 ]
 all = [
-    "plastro[dev,docs,notebooks,lineage,archetypes]",
+    "plastro[dev,docs,notebooks,lineage,clustering]",
 ]
 
 [project.urls]
-Homepage = "https://github.com/username/plastro"
+Homepage = "https://github.com/dpeerlab/PLASTRO"
 Documentation = "https://plastro.readthedocs.io/"
-Repository = "https://github.com/username/plastro.git"
-"Bug Tracker" = "https://github.com/username/plastro/issues"
-Changelog = "https://github.com/username/plastro/blob/main/CHANGELOG.md"
+Repository = "https://github.com/dpeerlab/PLASTRO.git"
+"Bug Tracker" = "https://github.com/dpeerlab/PLASTRO/issues"
+Changelog = "https://github.com/dpeerlab/PLASTRO/blob/main/CHANGELOG.md"
 
-[project.scripts]
-plastro = "plastro.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["plastro*"]

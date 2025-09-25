@@ -16,7 +16,7 @@ Modules:
     phylo: Phylogenetic analysis tools
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.2"
 __author__ = "Sitara Persad"
 __email__ = "sitara.persad@example.com"
 
@@ -34,7 +34,6 @@ from .plasticity import (
 from .overlap import (
     PLASTRO_score,
     PLASTRO_overlaps,
-    overlaps_to_score,
     compute_lineage_distances,
     compute_phenotype_distances,
     compute_gini_plasticity_score,
@@ -75,7 +74,6 @@ __all__ = [
     # Overlap functions
     'PLASTRO_score',
     'PLASTRO_overlaps',
-    'overlaps_to_score',
     'compute_lineage_distances',
     'compute_phenotype_distances',
     'compute_gini_plasticity_score',
