@@ -9,6 +9,11 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.10"
+  jobs:
+    pre_install:
+      - pip install pybind11>=2.6.0
+    post_install:
+      - pip install --extra-index-url https://test.pypi.org/simple/ graph-walker>=1.0.6
 
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
