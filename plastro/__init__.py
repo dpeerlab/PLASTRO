@@ -12,11 +12,10 @@ Modules:
     lineage_simulation: CRISPR-based lineage tracing simulation
     phenotype_simulation: Synthetic phenotypic data generation
     overlap: Overlap score computation and analysis
-    distances: Phenotypic distance calculation methods
     phylo: Phylogenetic analysis tools
 """
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 __author__ = "Sitara Persad"
 __email__ = "sitara.persad@example.com"
 

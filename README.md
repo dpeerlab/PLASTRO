@@ -172,7 +172,6 @@ plastro.neighbor_joining(distance_matrix, outgroup=None)
 - **`plastro.plasticity`**: Cellular plasticity simulation methods  
 - **`plastro.lineage_simulation`**: CRISPR-based lineage tracing simulation
 - **`plastro.phenotype_simulation`**: Synthetic single-cell data generation
-- **`plastro.distances`**: Phenotypic distance calculations
 - **`plastro.phylo`**: Phylogenetic tree construction and analysis
 
 ## Complete Example Workflow

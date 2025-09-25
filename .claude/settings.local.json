@@ -4,7 +4,9 @@
       "Bash(mkdir:*)",
       "Bash(pip install:*)",
       "Read(/Users/spersad/miniforge3/lib/python3.12/site-packages/**)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(rm:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
