@@ -20,18 +20,16 @@
 
 ### Quick Install
 
-PLASTRO requires `pybind11` to be installed first for building essential dependencies:
+PLASTRO can be installed using pip.
 
 ```bash
-pip install pybind11
 pip install plastro
 ```
 
-### From TestPyPI (Latest Development Version)
-
+If you encounter errors, PLASTRO may require `pybind11` to be installed first for building essential dependencies:
 ```bash
 pip install pybind11
-pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ plastro
+pip install plastro
 ```
 
 ### Development Install
