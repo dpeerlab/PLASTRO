@@ -1,7 +1,6 @@
 # PLASTRO
 
 [![PyPI version](https://badge.fury.io/py/plastro.svg)](https://badge.fury.io/py/plastro)
-[![Conda version](https://img.shields.io/conda/vn/conda-forge/plastro.svg)](https://anaconda.org/conda-forge/plastro)
 [![Documentation Status](https://readthedocs.org/projects/plastro/badge/?version=latest)](https://plastro.readthedocs.io/en/latest/?badge=latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -41,11 +40,6 @@ pip install pybind11
 pip install -e .
 ```
 
-### Conda Install (coming soon)
-
-```bash
-conda install -c conda-forge plastro
-```
 
 ## Quick Start
 

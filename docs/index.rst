@@ -60,12 +60,6 @@ Development Install
    pip install pybind11
    pip install -e .
 
-Conda Install (coming soon)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: bash
-
-   conda install -c conda-forge plastro
 
 Quick Start
 -----------
@@ -121,11 +115,12 @@ Simulate Cellular Plasticity
 
 .. code-block:: python
 
-   # Random walk plasticity
+   # Random walk plasticity (uses latent space embedding, defaults to X_dc diffusion components)
    plastic_cells = {'6': 0.3, '5': 0.2}  # 30% of cluster 6, 20% of cluster 5
    walk_lengths = {'6': 500, '5': 1000}
    plastic_walk_ad = plastro.random_walk_plasticity(
-       full_simulated_ad, ad, plastic_cells, walk_lengths
+       full_simulated_ad, ad, plastic_cells, walk_lengths,
+       latent_space_key='X_dc'  # Default: uses diffusion components
    )
 
    # Cluster switch plasticity  

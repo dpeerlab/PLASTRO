@@ -41,14 +41,6 @@ To install with all optional dependencies:
    pip install pybind11
    pip install plastro[all]
 
-Install via Conda
------------------
-
-You can also install PLASTRO using conda:
-
-.. code-block:: bash
-
-   conda install -c conda-forge plastro
 
 Development Installation
 ------------------------
